@@ -1,6 +1,7 @@
 'use client';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import NewsletterBox from '@/components/NewsletterBox';
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   FaWhatsapp, FaPhone, FaEnvelope, FaMapMarkerAlt, FaSearch, 
@@ -1074,6 +1075,7 @@ export default function Home() {
 
       {/* SOCIAL HUB SECTION */}
       <SocialHub />
+      <NewsletterBox/>
 
       {/* CONTACT SECTION */}
       <section id="contact" className="py-20 bg-slate-900 text-white">
