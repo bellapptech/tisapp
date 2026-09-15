@@ -569,42 +569,49 @@ export default function Home() {
     '/images/platesoftheday.jpeg',
   ];
 
-  const weeklyMenu: Record<DayKey, string[]> = {
-    lundi: [
-      'Saucisses sautées aux légumes',
-      'Riz basmati parfumé',
-    ],
+ const weeklyMenu: Record<DayKey, string[]> = {
+  lundi: [
+    'Saucisses cuite de TIS',
+  ],
 
-    mardi: [
-      'Porc braisé spécial TIS',
-      'Miondo / Plantain mûr',
-    ],
+  mardi: [
+    'Mbongo + porc',
+    'Eru',
+    'Riz sauce tomate / arachide',
+  ],
 
-    mercredi: [
-      'Saucisses en sauce tomate',
-      'Spaghetti Bolognaise maison',
-    ],
+  mercredi: [
+    'Okok salé',
+    'Couscous + légumes + sauce jaune',
+    'Riz sauce tomate / arachide',
+  ],
 
-    jeudi: [
-      'Eru royal aux saucisses',
-      'Waterfufu chaud',
-    ],
+  jeudi: [
+    'Pommes pilées',
+    'Ndolè',
+    'Riz sauce tomate / arachide',
+  ],
 
-    vendredi: [
-      'Poulet / Saucisses grillées',
-      'Frites de plantains ou pomme de terre',
-    ],
+  vendredi: [
+    'Macabo râpé',
+    'Rôti de porc',
+    'Tripes sautées',
+    'Poisson à la poêle',
+    'Riz sauce tomate / arachide',
+  ],
 
-    samedi: [
-      'Ndolé traditionnel aux crevettes & porc',
-      'Miondo / Bobolo',
-    ],
+  samedi: [
+    'Koki',
+    'Macabo malaxé',
+    'Riz sauce tomate / arachide',
+  ],
 
-    dimanche: [
-      'Menu chef spécial TIS',
-      'Grillades & Accompagnement au choix',
-    ],
-  };
+  dimanche: [
+    'Taro + bouillon',
+    'Taro sauce noire',
+    'Saucisses précuites',
+  ],
+};
 
   const daysMap: DayKey[] = [
     'dimanche',
