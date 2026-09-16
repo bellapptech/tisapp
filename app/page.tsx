@@ -721,6 +721,16 @@ export default function Home() {
       category: 'Saucisses',
       img: '/images/saucisepre.jpeg',
     },
+
+    {
+      id: 10,
+      name: 'Foyer Écologique avec Chariot',
+      desc:
+        'Modèle avec chariot, plus robuste et pratique pour les grosses marmites. Son système basculant permet d’ajouter du charbon sans retirer la marmite.',
+      price: '50 000 FCFA',
+      category: 'Écologie',
+      img: '/images/foyerecochariot.JPEG',
+    },
   ];
 
 
@@ -890,23 +900,13 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
 
-          <a href="#hero" className="flex items-center gap-3 group">
-
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-red-700 to-red-600 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-red-600/30 group-hover:scale-105 transition-transform">
-              TIS
-            </div>
-
-            <div>
-              <span className="font-black text-lg tracking-tight text-slate-900 block leading-tight">
-                THIERRY INDUSTRIE
-              </span>
-
-              <span className="text-xs font-bold text-red-600 tracking-widest uppercase">
-                SAUCISSES SARL
-              </span>
-            </div>
-
-          </a>
+         <a href="#hero" className="flex items-center group">
+  <img
+    src="/icon.png"
+    alt="Thierry Industrie Saucisses SARL"
+    className="h-14 sm:h-16 w-auto max-w-[240px] object-contain group-hover:scale-[1.02] transition-transform"
+  />
+</a>
 
 
           {/* DESKTOP NAV */}
