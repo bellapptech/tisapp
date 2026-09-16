@@ -30,14 +30,12 @@ import 'slick-carousel/slick/slick-theme.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-
 // ============================================================
 // GOOGLE MAPS
 // ============================================================
 
 const GOOGLE_MAPS_URL =
   'https://maps.app.goo.gl/F48qRi7DURKG6pin9?g_st=awb';
-
 
 // ============================================================
 // SOCIAL HUB
@@ -129,7 +127,6 @@ function SocialHub() {
   );
 }
 
-
 // ============================================================
 // TYPES
 // ============================================================
@@ -142,7 +139,6 @@ type DayKey =
   | 'vendredi'
   | 'samedi'
   | 'dimanche';
-
 
 // ============================================================
 // COMPANY DATA
@@ -199,15 +195,9 @@ const companyData = {
     facebookRestaurant:
       'https://www.facebook.com/share/1HsPWF9eCw/',
 
+    // FIXED: this must be a string URL, not JSX
     tiktokRestaurant:
-      <a
-  href="https://www.tiktok.com/@tis.restaurant"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="TIS Restaurant sur TikTok"
->
-  <FaTiktok />
-</a>,
+      'https://www.tiktok.com/@tis.restaurant',
 
     whatsappRestaurant:
       'https://wa.me/message/H5WFXYWGWKGJC1',
@@ -217,7 +207,6 @@ const companyData = {
     phone: '+237 691 89 18 14',
   },
 };
-
 
 // ============================================================
 // TEAM
@@ -229,7 +218,6 @@ const teamInfo = {
   subtitle:
     'Des professionnels engagés pour vous offrir le meilleur au quotidien.',
 };
-
 
 // ============================================================
 // ECO STOVE
@@ -244,7 +232,21 @@ const stoveDetails = {
   specs:
     '🧱 Béton réfractaire • Garantie 12 mois • Ventilation réglable',
 
-  image: '/images/Foyer écologiquemodèlestandard.jpeg',
+  // TWO STOVE IMAGES FOR THE SLIDER
+  images: [
+    {
+      src: '/images/Foyer écologiquemodèlestandard.jpeg',
+      alt: 'Foyer Écologique TIS — Modèle Standard',
+      name: 'Modèle Standard',
+      price: '35 000 FCFA',
+    },
+    {
+      src: '/images/foyerecochariot.JPG',
+      alt: 'Foyer Écologique TIS — Modèle avec Chariot',
+      name: 'Modèle avec Chariot',
+      price: '50 000 FCFA',
+    },
+  ],
 
   models: [
     {
@@ -263,7 +265,6 @@ const stoveDetails = {
 
   cta: '📞 Commandes : +237 691 89 18 14',
 };
-
 
 // ============================================================
 // HOME
@@ -299,7 +300,6 @@ export default function Home() {
 
   const moreRef = useRef<HTMLDivElement>(null);
 
-
   // ============================================================
   // INITIALIZATION
   // ============================================================
@@ -322,7 +322,6 @@ export default function Home() {
     };
   }, []);
 
-
   // ============================================================
   // SCROLL TOP
   // ============================================================
@@ -333,7 +332,6 @@ export default function Home() {
       behavior: 'smooth',
     });
   };
-
 
   // ============================================================
   // DROPDOWN OUTSIDE CLICK
@@ -363,7 +361,6 @@ export default function Home() {
     };
   }, []);
 
-
   // ============================================================
   // POPUP
   // ============================================================
@@ -375,7 +372,6 @@ export default function Home() {
 
     return () => clearTimeout(timer);
   }, []);
-
 
   // ============================================================
   // TYPING EFFECT
@@ -409,12 +405,10 @@ export default function Home() {
     return () => clearInterval(typingInterval);
   }, [isTyping]);
 
-
   const closePopup = () => {
     setShowPopup(false);
     setIsTyping(true);
   };
-
 
   // ============================================================
   // TRANSLATIONS
@@ -534,7 +528,6 @@ export default function Home() {
     },
   }[lang];
 
-
   // ============================================================
   // RESTAURANT GALLERY
   // ============================================================
@@ -556,7 +549,6 @@ export default function Home() {
     },
   ];
 
-
   // ============================================================
   // WEEKLY MENU
   // ============================================================
@@ -569,49 +561,49 @@ export default function Home() {
     '/images/platesoftheday.jpeg',
   ];
 
- const weeklyMenu: Record<DayKey, string[]> = {
-  lundi: [
-    'Saucisses cuite de TIS',
-  ],
+  const weeklyMenu: Record<DayKey, string[]> = {
+    lundi: [
+      'Saucisses cuite de TIS',
+    ],
 
-  mardi: [
-    'Mbongo + porc',
-    'Eru',
-    'Riz sauce tomate / arachide',
-  ],
+    mardi: [
+      'Mbongo + porc',
+      'Eru',
+      'Riz sauce tomate / arachide',
+    ],
 
-  mercredi: [
-    'Okok salé',
-    'Couscous + légumes + sauce jaune',
-    'Riz sauce tomate / arachide',
-  ],
+    mercredi: [
+      'Okok salé',
+      'Couscous + légumes + sauce jaune',
+      'Riz sauce tomate / arachide',
+    ],
 
-  jeudi: [
-    'Pommes pilées',
-    'Ndolè',
-    'Riz sauce tomate / arachide',
-  ],
+    jeudi: [
+      'Pommes pilées',
+      'Ndolè',
+      'Riz sauce tomate / arachide',
+    ],
 
-  vendredi: [
-    'Macabo râpé',
-    'Rôti de porc',
-    'Tripes sautées',
-    'Poisson à la poêle',
-    'Riz sauce tomate / arachide',
-  ],
+    vendredi: [
+      'Macabo râpé',
+      'Rôti de porc',
+      'Tripes sautées',
+      'Poisson à la poêle',
+      'Riz sauce tomate / arachide',
+    ],
 
-  samedi: [
-    'Koki',
-    'Macabo malaxé',
-    'Riz sauce tomate / arachide',
-  ],
+    samedi: [
+      'Koki',
+      'Macabo malaxé',
+      'Riz sauce tomate / arachide',
+    ],
 
-  dimanche: [
-    'Taro + bouillon',
-    'Taro sauce noire',
-    'Saucisses précuites',
-  ],
-};
+    dimanche: [
+      'Taro + bouillon',
+      'Taro sauce noire',
+      'Saucisses précuites',
+    ],
+  };
 
   const daysMap: DayKey[] = [
     'dimanche',
@@ -625,7 +617,6 @@ export default function Home() {
 
   const currentDayKey: DayKey =
     daysMap[new Date().getDay()];
-
 
   // ============================================================
   // PRODUCTS
@@ -729,10 +720,9 @@ export default function Home() {
         'Modèle avec chariot, plus robuste et pratique pour les grosses marmites. Son système basculant permet d’ajouter du charbon sans retirer la marmite.',
       price: '50 000 FCFA',
       category: 'Écologie',
-      img: '/images/foyerecochariot.JPEG',
+      img: '/images/foyerecochariot.JPG',
     },
   ];
-
 
   // ============================================================
   // SEARCH
@@ -742,7 +732,6 @@ export default function Home() {
     p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     p.desc.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
 
   // ============================================================
   // RETURN
@@ -820,7 +809,6 @@ export default function Home() {
         </div>
       )}
 
-
       {/* ======================================================
           FLOATING TYPING BANNER
       ====================================================== */}
@@ -836,7 +824,6 @@ export default function Home() {
 
         </div>
       )}
-
 
       {/* ======================================================
           TOP BAR
@@ -891,7 +878,6 @@ export default function Home() {
         </div>
       </div>
 
-
       {/* ======================================================
           NAVBAR
       ====================================================== */}
@@ -900,14 +886,13 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
 
-         <a href="#hero" className="flex items-center group">
-  <img
-    src="/icon.png"
-    alt="Thierry Industrie Saucisses SARL"
-    className="h-14 sm:h-16 w-auto max-w-[240px] object-contain group-hover:scale-[1.02] transition-transform"
-  />
-</a>
-
+          <a href="#hero" className="flex items-center group">
+            <img
+              src="/icon.png"
+              alt="Thierry Industrie Saucisses SARL"
+              className="h-14 sm:h-16 w-auto max-w-[240px] object-contain group-hover:scale-[1.02] transition-transform"
+            />
+          </a>
 
           {/* DESKTOP NAV */}
 
@@ -919,7 +904,6 @@ export default function Home() {
             >
               Accueil
             </a>
-
 
             <div className="relative" ref={productsRef}>
 
@@ -970,7 +954,6 @@ export default function Home() {
 
             </div>
 
-
             <a
               href="#restaurant"
               className="text-red-600 font-bold hover:underline"
@@ -985,13 +968,13 @@ export default function Home() {
               {t.navStove}
             </a>
 
+            {/* FIXED: #training -> #formations */}
             <a
-              href="#training"
+              href="#formations"
               className="hover:text-red-600 transition-colors"
             >
               {t.navTraining}
             </a>
-
 
             <div className="relative" ref={moreRef}>
 
@@ -1084,7 +1067,6 @@ export default function Home() {
 
           </nav>
 
-
           {/* DESKTOP WHATSAPP */}
 
           <div className="hidden lg:flex items-center gap-4">
@@ -1101,7 +1083,6 @@ export default function Home() {
 
           </div>
 
-
           {/* MOBILE BUTTON */}
 
           <button
@@ -1114,7 +1095,6 @@ export default function Home() {
           </button>
 
         </div>
-
 
         {/* MOBILE MENU */}
 
@@ -1161,8 +1141,9 @@ export default function Home() {
               Domaines d'Activité
             </a>
 
+            {/* FIXED: #training -> #formations */}
             <a
-              href="#training"
+              href="#formations"
               onClick={() => setMobileMenuOpen(false)}
               className="block font-bold text-slate-800 hover:text-red-600"
             >
@@ -1228,7 +1209,6 @@ export default function Home() {
 
       </header>
 
-
       {/* ======================================================
           HERO
       ====================================================== */}
@@ -1283,7 +1263,6 @@ export default function Home() {
 
           </div>
 
-
           <div
             className="relative flex justify-center"
             data-aos="fade-left"
@@ -1325,7 +1304,6 @@ export default function Home() {
 
       </section>
 
-
       {/* ======================================================
           FOUNDER
       ====================================================== */}
@@ -1355,7 +1333,6 @@ export default function Home() {
             </p>
 
           </div>
-
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
 
@@ -1391,7 +1368,6 @@ export default function Home() {
               </div>
 
             </div>
-
 
             <div
               className="space-y-6"
@@ -1435,7 +1411,6 @@ export default function Home() {
             </div>
 
           </div>
-
 
           {/* TEAM */}
 
@@ -1483,7 +1458,6 @@ export default function Home() {
 
       </section>
 
-
       {/* ======================================================
           PRODUCTS
       ====================================================== */}
@@ -1515,7 +1489,6 @@ export default function Home() {
 
           </div>
 
-
           {/* SEARCH */}
 
           <div
@@ -1538,7 +1511,6 @@ export default function Home() {
             />
 
           </div>
-
 
           {/* PRODUCTS */}
 
@@ -1572,7 +1544,6 @@ export default function Home() {
 
                   </div>
 
-
                   <div className="p-6 flex flex-col flex-1 justify-between space-y-4">
 
                     <div>
@@ -1586,7 +1557,6 @@ export default function Home() {
                       </p>
 
                     </div>
-
 
                     <a
                       href={`https://wa.me/237691891814?text=Bonjour,%20je%20souhaite%20commander%20le%20produit:%20${encodeURIComponent(p.name)}`}
@@ -1627,7 +1597,6 @@ export default function Home() {
 
       </section>
 
-
       {/* ======================================================
           RESTAURANT
       ====================================================== */}
@@ -1658,7 +1627,6 @@ export default function Home() {
 
           </div>
 
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
 
             <div
@@ -1675,9 +1643,6 @@ export default function Home() {
                 📍 Yaoundé — Chapelle Tsinga
               </div>
 
-
-              {/* GOOGLE MAP BUTTON */}
-
               <a
                 href={companyData.googleMaps}
                 target="_blank"
@@ -1687,7 +1652,6 @@ export default function Home() {
                 <FaMapMarkerAlt className="text-base" />
                 Voir notre localisation sur Google Maps
               </a>
-
 
               <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
                 Un cadre chaleureux, des plats savoureux et un service
@@ -1731,7 +1695,6 @@ export default function Home() {
 
             </div>
 
-
             <div
               className="relative"
               data-aos="fade-left"
@@ -1750,7 +1713,6 @@ export default function Home() {
             </div>
 
           </div>
-
 
           {/* WEEKLY MENU */}
 
@@ -1772,7 +1734,6 @@ export default function Home() {
               </h3>
 
             </div>
-
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
 
@@ -1807,7 +1768,6 @@ export default function Home() {
                   </div>
 
                 </div>
-
 
                 {/* FOOD GALLERY */}
 
@@ -1848,7 +1808,6 @@ export default function Home() {
                 </div>
 
               </div>
-
 
               <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
 
@@ -1919,7 +1878,6 @@ export default function Home() {
         </div>
 
       </section>
-
 
       {/* ======================================================
           ECO STOVE
@@ -2005,19 +1963,88 @@ export default function Home() {
 
             </div>
 
+            {/* ==================================================
+                ECO STOVE IMAGE SLIDER
+            ================================================== */}
 
             <div
               className="relative flex justify-center"
               data-aos="fade-left"
             >
 
-              <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-800">
+              <div className="relative w-full max-w-md">
 
-                <img
-                  src={stoveDetails.image}
-                  alt="Foyer Écologique TIS"
-                  className="w-full h-full object-cover"
-                />
+                <Slider
+                  dots={true}
+                  infinite={true}
+                  speed={700}
+                  slidesToShow={1}
+                  slidesToScroll={1}
+                  autoplay={true}
+                  autoplaySpeed={4500}
+                  pauseOnHover={true}
+                  pauseOnFocus={true}
+                  arrows={true}
+                  swipeToSlide={true}
+                  touchMove={true}
+                  adaptiveHeight={false}
+                  responsive={[
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        arrows: false,
+                        dots: true,
+                      },
+                    },
+                  ]}
+                >
+
+                  {stoveDetails.images.map((image) => (
+
+                    <div
+                      key={image.src}
+                      className="px-1 pb-8"
+                    >
+
+                      <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-800">
+
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-full object-cover"
+                        />
+
+                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-6 pt-16">
+
+                          <div className="flex items-end justify-between gap-3">
+
+                            <div>
+
+                              <span className="inline-block bg-red-600 text-white text-[10px] sm:text-xs font-black uppercase px-3 py-1 rounded-full mb-2">
+                                Foyer Écologique
+                              </span>
+
+                              <h3 className="text-white font-black text-lg sm:text-xl">
+                                {image.name}
+                              </h3>
+
+                            </div>
+
+                            <span className="bg-white text-red-600 font-black text-sm sm:text-base px-3 py-2 rounded-xl shadow-lg whitespace-nowrap">
+                              {image.price}
+                            </span>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  ))}
+
+                </Slider>
 
               </div>
 
@@ -2028,7 +2055,6 @@ export default function Home() {
         </div>
 
       </section>
-
 
       {/* ======================================================
           SERVICES
@@ -2060,7 +2086,6 @@ export default function Home() {
 
           </div>
 
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <div
@@ -2084,7 +2109,6 @@ export default function Home() {
 
             </div>
 
-
             <div
               className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 space-y-4"
               data-aos="fade-up"
@@ -2105,7 +2129,6 @@ export default function Home() {
               </p>
 
             </div>
-
 
             <div
               className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 space-y-4"
@@ -2134,227 +2157,272 @@ export default function Home() {
 
       </section>
 
-    {/* =========================================================
-    FORMATION & AVENIR — TIS VISIONLABS 2035
-========================================================= */}
-<section
-  id="formations"
-  className="relative overflow-hidden py-20 sm:py-24 bg-slate-50"
->
-  {/* Decorative background */}
-  <div className="absolute -top-32 -left-32 w-80 h-80 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
-  <div className="absolute -bottom-40 -right-32 w-96 h-96 bg-red-600/5 rounded-full blur-3xl pointer-events-none" />
+      {/* =========================================================
+          FORMATION & AVENIR — TIS VISIONLABS 2035
+      ========================================================= */}
 
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-    {/* Section heading */}
-    <div
-      className="max-w-3xl mx-auto text-center mb-12 sm:mb-16"
-      data-aos="fade-up"
-    >
-      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-100 text-red-600 text-xs font-black uppercase tracking-[0.18em]">
-        Formation & Avenir
-      </span>
-
-      <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
-        TIS VisionLabs{" "}
-        <span className="text-red-600">2035</span>{" "}
-        & Formations
-      </h2>
-
-      <p className="mt-5 text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
-        TIS SARL s'engage dans le transfert de compétences à travers
-        des programmes de formation professionnelle en transformation
-        agroalimentaire et fabrication de saucisses.
-      </p>
-    </div>
-
-    {/* Main content */}
-    <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-
-      {/* IMAGE */}
-      <div
-        className="group relative"
-        data-aos="fade-right"
+      <section
+        id="formations"
+        className="relative overflow-hidden py-20 sm:py-24 bg-slate-50"
       >
-        <div className="absolute -inset-3 bg-gradient-to-br from-red-600/20 via-transparent to-red-600/10 rounded-[2.2rem] blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
 
-        <div className="relative overflow-hidden rounded-[2rem] bg-white border border-slate-200 shadow-2xl">
-          
-          {/* Badge */}
-          <div className="absolute top-4 left-4 z-20">
-            <span className="inline-flex items-center gap-2 rounded-full bg-slate-950/90 backdrop-blur-md text-white px-4 py-2 text-[10px] sm:text-xs font-black shadow-lg">
-              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-              TIS VisionLabs 2035
+        <div className="absolute -top-32 -left-32 w-80 h-80 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="absolute -bottom-40 -right-32 w-96 h-96 bg-red-600/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          <div
+            className="max-w-3xl mx-auto text-center mb-12 sm:mb-16"
+            data-aos="fade-up"
+          >
+
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-100 text-red-600 text-xs font-black uppercase tracking-[0.18em]">
+              Formation & Avenir
             </span>
+
+            <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+              TIS VisionLabs{' '}
+              <span className="text-red-600">2035</span>{' '}
+              & Formations
+            </h2>
+
+            <p className="mt-5 text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
+              TIS SARL s'engage dans le transfert de compétences à travers
+              des programmes de formation professionnelle en transformation
+              agroalimentaire et fabrication de saucisses.
+            </p>
+
           </div>
 
-          <img
-            src="/images/vision-labs.jpeg"
-            alt="TIS VisionLabs 2035 - Formation en fabrication des saucisses"
-            loading="lazy"
-            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.025]"
-          />
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          {/* Bottom overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-white text-xs sm:text-sm font-black">
-                  Formation professionnelle
-                </p>
-                <p className="text-white/80 text-[10px] sm:text-xs mt-1">
-                  Fabrication artisanale des saucisses
-                </p>
-              </div>
+            {/* IMAGE */}
 
-              <div className="hidden sm:block bg-red-600 text-white px-3 py-2 rounded-xl text-xs font-black">
-                Made in Cameroon
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* TEXT / CONTENT */}
-      <div
-        data-aos="fade-left"
-        data-aos-delay="120"
-      >
-        <div className="inline-flex items-center gap-2 text-red-600 font-black text-xs uppercase tracking-[0.18em] mb-4">
-          <span className="w-8 h-0.5 bg-red-600" />
-          Former pour construire
-        </div>
-
-        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight">
-          Construire une industrie locale
-          <span className="text-red-600"> forte, durable et compétitive.</span>
-        </h3>
-
-        <p className="mt-5 text-sm sm:text-base text-slate-600 leading-relaxed">
-          À travers l'initiative{" "}
-          <strong className="text-slate-900">
-            TIS VisionLabs 2035
-          </strong>
-          , nous formons la nouvelle génération d'entrepreneurs
-          camerounais pour bâtir une industrie locale forte, durable
-          et compétitive.
-        </p>
-
-        {/* Training points */}
-        <div className="mt-7 space-y-3">
-
-          {[
-            {
-              title: "Hygiène & sécurité alimentaire",
-              text: "Maîtrise des normes d’hygiène et de sécurité alimentaire, avec option nutrition.",
-            },
-            {
-              title: "Fabrication des saucisses",
-              text: "Techniques de découpe, assaisonnement et embossage des saucisses.",
-            },
-            {
-              title: "Production & commercialisation",
-              text: "Gestion d’unité de production et stratégie de commercialisation Made in Cameroon.",
-            },
-          ].map((item, index) => (
             <div
-              key={item.title}
-              className="group/item flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-              data-aos="fade-up"
-              data-aos-delay={180 + index * 80}
+              className="group relative"
+              data-aos="fade-right"
             >
-              <div className="shrink-0 w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center group-hover/item:bg-red-600 group-hover/item:text-white transition-colors duration-300">
-                <FaCheckCircle className="text-lg" />
+
+              <div className="absolute -inset-3 bg-gradient-to-br from-red-600/20 via-transparent to-red-600/10 rounded-[2.2rem] blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative overflow-hidden rounded-[2rem] bg-white border border-slate-200 shadow-2xl">
+
+                <div className="absolute top-4 left-4 z-20">
+
+                  <span className="inline-flex items-center gap-2 rounded-full bg-slate-950/90 backdrop-blur-md text-white px-4 py-2 text-[10px] sm:text-xs font-black shadow-lg">
+
+                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+
+                    TIS VisionLabs 2035
+
+                  </span>
+
+                </div>
+
+                <img
+                  src="/images/vision-labs.jpeg"
+                  alt="TIS VisionLabs 2035 - Formation en fabrication des saucisses"
+                  loading="lazy"
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                />
+
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+
+                  <div className="flex items-center justify-between gap-4">
+
+                    <div>
+
+                      <p className="text-white text-xs sm:text-sm font-black">
+                        Formation professionnelle
+                      </p>
+
+                      <p className="text-white/80 text-[10px] sm:text-xs mt-1">
+                        Fabrication artisanale des saucisses
+                      </p>
+
+                    </div>
+
+                    <div className="hidden sm:block bg-red-600 text-white px-3 py-2 rounded-xl text-xs font-black">
+                      Made in Cameroon
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
 
-              <div>
-                <h4 className="text-sm sm:text-base font-black text-slate-900">
-                  {item.title}
-                </h4>
-
-                <p className="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {item.text}
-                </p>
-              </div>
             </div>
-          ))}
 
-        </div>
+            {/* TEXT / CONTENT */}
 
-        {/* CTA */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <div
+              data-aos="fade-left"
+              data-aos-delay="120"
+            >
 
-          <a
-            href="https://wa.me/237691891814?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20vos%20programmes%20de%20formation."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-black text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-red-600/20 transition-all duration-300 hover:-translate-y-1"
-          >
-            <FaWhatsapp className="text-lg" />
-            S’inscrire à une formation
-          </a>
+              <div className="inline-flex items-center gap-2 text-red-600 font-black text-xs uppercase tracking-[0.18em] mb-4">
 
-          <a
-            href="tel:+237691891814"
-            className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-800 font-bold text-sm px-6 py-3.5 rounded-xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1"
-          >
-            <FaPhone className="text-sm text-red-600" />
-            Nous contacter
-          </a>
+                <span className="w-8 h-0.5 bg-red-600" />
 
-        </div>
+                Former pour construire
 
-        {/* Small information line */}
-        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] sm:text-xs font-bold text-slate-500">
-          <span>✓ Formation pratique</span>
-          <span>✓ Entrepreneurs</span>
-          <span>✓ Made in Cameroon</span>
-        </div>
-      </div>
-    </div>
+              </div>
 
-    {/* Bottom highlight cards */}
-    <div
-      className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-14"
-      data-aos="fade-up"
-      data-aos-delay="250"
-    >
-      {[
-        {
-          number: "5",
-          label: "Jours de formation",
-        },
-        {
-          number: "10",
-          label: "Jeunes par cohorte",
-        },
-        {
-          number: "37 500",
-          label: "FCFA la formation",
-        },
-      ].map((item) => (
-        <div
-          key={item.label}
-          className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-        >
-          <div className="text-2xl sm:text-3xl font-black text-red-600">
-            {item.number}
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight">
+
+                Construire une industrie locale
+
+                <span className="text-red-600">
+                  {' '}forte, durable et compétitive.
+                </span>
+
+              </h3>
+
+              <p className="mt-5 text-sm sm:text-base text-slate-600 leading-relaxed">
+
+                À travers l'initiative{' '}
+
+                <strong className="text-slate-900">
+                  TIS VisionLabs 2035
+                </strong>
+
+                , nous formons la nouvelle génération d'entrepreneurs
+                camerounais pour bâtir une industrie locale forte, durable
+                et compétitive.
+
+              </p>
+
+              <div className="mt-7 space-y-3">
+
+                {[
+                  {
+                    title: 'Hygiène & sécurité alimentaire',
+                    text: 'Maîtrise des normes d’hygiène et de sécurité alimentaire, avec option nutrition.',
+                  },
+                  {
+                    title: 'Fabrication des saucisses',
+                    text: 'Techniques de découpe, assaisonnement et embossage des saucisses.',
+                  },
+                  {
+                    title: 'Production & commercialisation',
+                    text: 'Gestion d’unité de production et stratégie de commercialisation Made in Cameroon.',
+                  },
+                ].map((item, index) => (
+
+                  <div
+                    key={item.title}
+                    className="group/item flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay={180 + index * 80}
+                  >
+
+                    <div className="shrink-0 w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center group-hover/item:bg-red-600 group-hover/item:text-white transition-colors duration-300">
+
+                      <FaCheckCircle className="text-lg" />
+
+                    </div>
+
+                    <div>
+
+                      <h4 className="text-sm sm:text-base font-black text-slate-900">
+                        {item.title}
+                      </h4>
+
+                      <p className="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        {item.text}
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                ))}
+
+              </div>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+
+                <a
+                  href="https://wa.me/237691891814?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20vos%20programmes%20de%20formation."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-black text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-red-600/20 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <FaWhatsapp className="text-lg" />
+                  S’inscrire à une formation
+                </a>
+
+                <a
+                  href="tel:+237691891814"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-800 font-bold text-sm px-6 py-3.5 rounded-xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1"
+                >
+                  <FaPhone className="text-sm text-red-600" />
+                  Nous contacter
+                </a>
+
+              </div>
+
+              <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] sm:text-xs font-bold text-slate-500">
+
+                <span>✓ Formation pratique</span>
+                <span>✓ Entrepreneurs</span>
+                <span>✓ Made in Cameroon</span>
+
+              </div>
+
+            </div>
+
           </div>
 
-          <div className="mt-1 text-xs sm:text-sm font-bold text-slate-600">
-            {item.label}
+          <div
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-14"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+
+            {[
+              {
+                number: '5',
+                label: 'Jours de formation',
+              },
+              {
+                number: '10',
+                label: 'Jeunes par cohorte',
+              },
+              {
+                number: '37 500',
+                label: 'FCFA la formation',
+              },
+            ].map((item) => (
+
+              <div
+                key={item.label}
+                className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              >
+
+                <div className="text-2xl sm:text-3xl font-black text-red-600">
+                  {item.number}
+                </div>
+
+                <div className="mt-1 text-xs sm:text-sm font-bold text-slate-600">
+                  {item.label}
+                </div>
+
+              </div>
+
+            ))}
+
           </div>
+
         </div>
-      ))}
-    </div>
 
-  </div>
-</section>
+      </section>
 
-{/* NEWSLETTER / ALERTES TIS */}
-<NewsletterBox />
+      {/* NEWSLETTER / ALERTES TIS */}
 
+      <NewsletterBox />
 
       {/* ======================================================
           RESTAURANT GALLERY
@@ -2385,7 +2453,6 @@ export default function Home() {
             </p>
 
           </div>
-
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 
@@ -2430,7 +2497,6 @@ export default function Home() {
 
       </section>
 
-
       {/* ======================================================
           TESTIMONIALS
       ====================================================== */}
@@ -2443,7 +2509,6 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-72 h-72 bg-red-600/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-600/5 rounded-full blur-3xl pointer-events-none" />
-
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
 
@@ -2466,13 +2531,14 @@ export default function Home() {
             </p>
 
             <div className="flex items-center justify-center gap-2 mt-5">
+
               <span className="w-10 h-1 bg-red-600 rounded-full" />
               <span className="w-2 h-2 bg-red-300 rounded-full" />
               <span className="w-2 h-2 bg-red-200 rounded-full" />
+
             </div>
 
           </div>
-
 
           <div
             className="max-w-5xl mx-auto"
@@ -2565,7 +2631,6 @@ export default function Home() {
 
                     </div>
 
-
                     <div className="px-5 sm:px-6 py-5 border-t border-slate-100 bg-white">
 
                       <div className="flex items-center justify-between gap-4">
@@ -2600,7 +2665,6 @@ export default function Home() {
 
           </div>
 
-
           <div
             className="max-w-3xl mx-auto mt-10 sm:mt-14 text-center"
             data-aos="fade-up"
@@ -2631,7 +2695,6 @@ export default function Home() {
         </div>
 
       </section>
-
 
       {/* ======================================================
           GOOGLE MAPS LOCATION
@@ -2673,7 +2736,6 @@ export default function Home() {
 
             </div>
 
-
             <a
               href={companyData.googleMaps}
               target="_blank"
@@ -2690,13 +2752,11 @@ export default function Home() {
 
       </section>
 
-
       {/* ======================================================
           SOCIAL HUB
       ====================================================== */}
 
       <SocialHub />
-
 
       {/* ======================================================
           FOOTER
@@ -2708,7 +2768,6 @@ export default function Home() {
       >
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-
 
           {/* COMPANY */}
 
@@ -2733,7 +2792,6 @@ export default function Home() {
 
           </div>
 
-
           {/* LOCATION */}
 
           <div className="space-y-4">
@@ -2746,7 +2804,6 @@ export default function Home() {
               {t.address}
             </p>
 
-
             <a
               href={companyData.googleMaps}
               target="_blank"
@@ -2758,7 +2815,6 @@ export default function Home() {
             </a>
 
           </div>
-
 
           {/* CONTACT */}
 
@@ -2776,7 +2832,6 @@ export default function Home() {
               thierryindustriesaucisses15@gmail.com
             </p>
 
-
             <a
               href="https://wa.me/237691891814"
               target="_blank"
@@ -2788,7 +2843,6 @@ export default function Home() {
             </a>
 
           </div>
-
 
           {/* QUICK LINKS */}
 
@@ -2838,6 +2892,15 @@ export default function Home() {
 
               <li>
                 <a
+                  href="#formations"
+                  className="hover:text-red-500 transition-colors"
+                >
+                  Formation
+                </a>
+              </li>
+
+              <li>
+                <a
                   href="#location"
                   className="hover:text-red-500 transition-colors"
                 >
@@ -2859,7 +2922,6 @@ export default function Home() {
           </div>
 
         </div>
-
 
         {/* COPYRIGHT */}
 
@@ -2914,13 +2976,11 @@ export default function Home() {
 
       </footer>
 
-
       {/* ======================================================
           FLOATING WHATSAPP
       ====================================================== */}
 
       <WhatsAppFloat />
-
 
       {/* ======================================================
           SCROLL TO TOP
