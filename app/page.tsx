@@ -241,7 +241,7 @@ const stoveDetails = {
       price: '35 000 FCFA',
     },
     {
-      src: '/images/foyerecochariot.JPG',
+      src: '/images/foyerecochariot.jpg',
       alt: 'Foyer Écologique TIS — Modèle avec Chariot',
       name: 'Modèle avec Chariot',
       price: '50 000 FCFA',
@@ -720,7 +720,7 @@ export default function Home() {
         'Modèle avec chariot, plus robuste et pratique pour les grosses marmites. Son système basculant permet d’ajouter du charbon sans retirer la marmite.',
       price: '50 000 FCFA',
       category: 'Écologie',
-      img: '/images/foyerecochariot.JPG',
+      img: '/images/foyerecochariot.jpg',
     },
   ];
 
