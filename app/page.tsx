@@ -152,7 +152,7 @@ const companyData = {
   founder: {
     name: 'Joël Thierry TSOPMO',
     title: 'Promoteur & Gérant de TIS SARL',
-    img: '/images/ceo.jpeg',
+    img: '/images/ceonewprofile.jpeg',
 
     linkedin:
       'https://www.linkedin.com/in/jo%C3%ABl-thierry-tsopmo-386773194',
@@ -550,75 +550,115 @@ export default function Home() {
   ];
 
   // ============================================================
-  // WEEKLY MENU
-  // ============================================================
+// WEEKLY MENU
+// ============================================================
 
-  const weeklyMenuImages = [
-    '/images/platdujour.jpeg',
-    '/images/platdujour1.jpeg',
-    '/images/platdujour2.jpeg',
-    '/images/platdujour3.jpeg',
-    '/images/platesoftheday.jpeg',
-  ];
+const weeklyMenuImages = [
+  '/images/platdujour.jpeg',
+  '/images/platdujour1.jpeg',
+  '/images/platdujour2.jpeg',
+  '/images/platdujour3.jpeg',
+  '/images/platesoftheday.jpeg',
+];
 
-  const weeklyMenu: Record<DayKey, string[]> = {
-    lundi: [
-      'Saucisses cuite de TIS',
-    ],
+const weeklyMenu: Record<DayKey, string[]> = {
+  lundi: [
+    'Saucisses cuite de TIS',
+  ],
 
-    mardi: [
-      'Mbongo + porc',
-      'Eru',
-      'Riz sauce tomate / arachide',
-    ],
+  mardi: [
+    'Mbongo + porc',
+    'Eru',
+    'Riz sauce tomate / arachide',
+  ],
 
-    mercredi: [
-      'Okok salé',
-      'Couscous + légumes + sauce jaune',
-      'Riz sauce tomate / arachide',
-    ],
+  mercredi: [
+    'Okok salé',
+    'Couscous + légumes + sauce jaune',
+    'Riz sauce tomate / arachide',
+  ],
 
-    jeudi: [
-      'Pommes pilées',
-      'Ndolè',
-      'Riz sauce tomate / arachide',
-    ],
+  jeudi: [
+    'Pommes pilées',
+    'Ndolè',
+    'Riz sauce tomate / arachide',
+  ],
 
-    vendredi: [
-      'Macabo râpé',
-      'Rôti de porc',
-      'Tripes sautées',
-      'Poisson à la poêle',
-      'Riz sauce tomate / arachide',
-    ],
+  vendredi: [
+    'Macabo râpé',
+    'Rôti de porc',
+    'Tripes sautées',
+    'Poisson à la poêle',
+    'Riz sauce tomate / arachide',
+  ],
 
-    samedi: [
-      'Koki',
-      'Macabo malaxé',
-      'Riz sauce tomate / arachide',
-    ],
+  samedi: [
+    'Koki',
+    'Macabo malaxé',
+    'Riz sauce tomate / arachide',
+  ],
 
-    dimanche: [
-      'Taro + bouillon',
-      'Taro sauce noire',
-      'Saucisses précuites',
-    ],
-  };
+  dimanche: [
+    'Taro + bouillon',
+    'Taro sauce noire',
+    'Saucisses précuites',
+  ],
+};
 
-  const daysMap: DayKey[] = [
-    'dimanche',
-    'lundi',
-    'mardi',
-    'mercredi',
-    'jeudi',
-    'vendredi',
-    'samedi',
-  ];
+const daysMap: DayKey[] = [
+  'dimanche',
+  'lundi',
+  'mardi',
+  'mercredi',
+  'jeudi',
+  'vendredi',
+  'samedi',
+];
 
-  const currentDayKey: DayKey =
-    daysMap[new Date().getDay()];
+const currentDayKey: DayKey =
+  daysMap[new Date().getDay()];
 
-  // ============================================================
+// ============================================================
+// RESERVATION & PAYMENT INFORMATION
+// ============================================================
+
+const weeklyMenuReservation =
+  'Au niveau des plats, les disponibilités sont uniquement sur réservation.';
+
+const paymentInformation = {
+  company: 'THIERRY INDUSTRIE SAUCISSES SARL',
+
+  title: 'NOS MODES DE PAIEMENT',
+
+  orangeMoney: {
+    number: '1️⃣',
+    name: 'ORANGE MONEY',
+    code: '#150*47*914250*MONTANT#',
+    description: 'TIS SARL',
+  },
+
+  mobileMoney: {
+    number: '2️⃣',
+    name: 'MOBILE MONEY',
+    code: '*126*4*299219*Montant#',
+    accountName: 'Thierry Industrie Saucisses',
+  },
+
+  bank: {
+    number: '3️⃣',
+    name: 'CHÈQUE OU VIREMENT BANCAIRE',
+    bankName: 'UBA',
+    rib: '10033 05206 06011000543 12',
+    accountName: 'Thierry Industrie Saucisses SARL',
+  },
+
+  deliveryNote:
+    'Donnez juste les frais de livraison au livreur et faites-nous le dépôt du reste.',
+};
+
+
+
+   // ============================================================
   // PRODUCTS
   // ============================================================
 
@@ -665,16 +705,66 @@ export default function Home() {
 
     {
       id: 5,
-      name: 'Intrants pour Saucisses',
+      name: 'Viande de porc',
       desc:
-        'Viande, gras, boyau et épices de qualité professionnelle',
-      price: 'À partir de 1 500 FCFA /kg',
-      category: 'Intrants',
-      img: '/images/instrantsaucis.jpeg',
+        'Viande de porc fraîche et de qualité, disponible selon les besoins.',
+      price: 'Selon quantité',
+      category: 'Viande',
+      img: '/images/viandedeporc.jpeg',
     },
 
     {
       id: 6,
+      name: 'Boyau de porc',
+      desc:
+        'Boyaux de porc de qualité adaptés à la fabrication artisanale et professionnelle des saucisses.',
+      price: 'Sur commande',
+      category: 'Intrants',
+      img: '/images/bayaudeporc.jpeg',
+    },
+
+    {
+      id: 7,
+      name: 'Peau de porc',
+      desc:
+        'Peau de porc fraîche, disponible pour différents usages.',
+      price: 'Sur commande',
+      category: 'Viande',
+      img: '/images/peaudeporc.jpeg',
+    },
+
+    {
+      id: 8,
+      name: 'Peau de poulet',
+      desc:
+        'Peau de poulet fraîche et de qualité.',
+      price: 'Sur commande',
+      category: 'Viande',
+      img: '/images/peaudepoulet.jpeg',
+    },
+
+    {
+      id: 9,
+      name: 'Fruitis Baobab',
+      desc:
+        'Une boisson naturelle au baobab, rafraîchissante et savoureuse.',
+      price: '1 000 FCFA le demi-litre',
+      category: 'Boissons',
+      img: '/images/FruitisBaobab.jpeg',
+    },
+
+    {
+      id: 10,
+      name: 'Fruitis Lait Caillé',
+      desc:
+        'Fruitis Lait Caillé : un goût authentique, une texture crémeuse et 100 % de plaisir.',
+      price: '1 000 FCFA le demi-litre',
+      category: 'Boissons',
+      img: '/images/fruitlaitcallle.jpeg',
+    },
+
+    {
+      id: 11,
       name: 'Vente de Porc (Gros / Détail)',
       desc:
         'Viande de porc fraîche et saine contrôlée',
@@ -684,7 +774,7 @@ export default function Home() {
     },
 
     {
-      id: 7,
+      id: 12,
       name: 'Foyer Écologique Modèle Standard',
       desc:
         'Spécial pour la cuisson au charbon utilisant un système solaire intégré',
@@ -694,7 +784,7 @@ export default function Home() {
     },
 
     {
-      id: 8,
+      id: 13,
       name: 'Saucisses Cuites Officielles (Tarif & Détails)',
       desc:
         'Porc, Cocktail, Bœuf - Différents formats disponibles en gros et en détail.',
@@ -704,7 +794,7 @@ export default function Home() {
     },
 
     {
-      id: 9,
+      id: 14,
       name: 'Saucisses Précuites Officielles (Paquets)',
       desc:
         'Porc, Cocktail, Bœuf - Formats paquets de 25 petites ou 8 grosses.',
@@ -714,7 +804,7 @@ export default function Home() {
     },
 
     {
-      id: 10,
+      id: 15,
       name: 'Foyer Écologique avec Chariot',
       desc:
         'Modèle avec chariot, plus robuste et pratique pour les grosses marmites. Son système basculant permet d’ajouter du charbon sans retirer la marmite.',
@@ -1768,6 +1858,9 @@ export default function Home() {
                   </div>
 
                 </div>
+
+
+  
 
                 {/* FOOD GALLERY */}
 
