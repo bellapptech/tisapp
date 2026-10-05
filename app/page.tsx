@@ -3,6 +3,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import NewsletterBox from '@/components/NewsletterBox';
+import { FaMobileScreenButton } from "react-icons/fa6";
+import PaymentReservation from "@/components/PaymentReservation";
+import Footer from "@/components/Footer";
+
+
+
 import {
   FaWhatsapp,
   FaPhone,
@@ -1854,12 +1860,18 @@ const paymentInformation = {
                       {currentDayKey} — Aujourd'hui
 
                     </div>
-
+                   
                   </div>
+                
+                 </div>
+               
+          
 
-                </div>
 
+                 {/* PAYMENT & RESERVATION */}
+   
 
+      {/* FOOTER */}
   
 
                 {/* FOOD GALLERY */}
@@ -2851,223 +2863,377 @@ const paymentInformation = {
 
       <SocialHub />
 
-      {/* ======================================================
-          FOOTER
-      ====================================================== */}
+      <PaymentReservation />
 
-      <footer
-        id="contact"
-        className="bg-slate-950 text-white pt-20 pb-12 border-t border-slate-800"
-      >
+{/* ======================================================
+    FOOTER
+====================================================== */}
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<footer
+  id="contact"
+  className="bg-slate-950 text-white pt-20 pb-12 border-t border-slate-800"
+>
+  
+{/* ============================================================
+    RESERVATION & PAYMENT
+============================================================ */}
+<section
+  id="reservation-paiement"
+  className="w-full py-12 sm:py-16"
+>
+  <div className="max-w-7xl mx-auto px-4 sm:px-8">
 
-          {/* COMPANY */}
+    <div className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 shadow-2xl">
 
-          <div className="space-y-4">
+      {/* HEADER */}
+      <div className="border-b border-slate-800 bg-gradient-to-r from-red-950 via-slate-900 to-slate-950 px-6 py-8 sm:px-10">
 
-            <div className="flex items-center gap-3">
+        <div className="mb-4 inline-flex rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-red-400">
+          Réservation uniquement
+        </div>
 
-              <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white font-black text-lg">
-                TIS
-              </div>
+        <h2 className="text-2xl font-black text-white sm:text-3xl">
+          Réservation & Paiement
+        </h2>
 
-              <span className="font-black text-base">
-                TIS SARL
-              </span>
+      
 
-            </div>
+      </div>
 
-            <p className="text-slate-400 text-xs leading-relaxed">
-              {companyData.name} — {t.tagline}. Transformation
-              agroalimentaire, restaurant, porciculture et foyers écologiques.
-            </p>
+      {/* COMPANY NAME */}
+      <div className="px-6 pt-8 sm:px-10">
 
-          </div>
+        <p className="text-base font-black tracking-wide text-white sm:text-lg">
+          THIERRY INDUSTRIE SAUCISSES SARL
+        </p>
 
-          {/* LOCATION */}
+        <p className="mt-3 text-sm font-bold uppercase tracking-wider text-amber-400">
+          💳 NOS MODES DE PAIEMENT
+        </p>
 
-          <div className="space-y-4">
+      </div>
 
-            <h4 className="font-bold text-sm uppercase tracking-wider text-red-500">
-              Localisation
-            </h4>
+      {/* PAYMENT METHODS */}
+      <div className="grid grid-cols-1 gap-5 px-6 py-8 md:grid-cols-3 sm:px-10">
 
-            <p className="text-slate-300 text-xs leading-relaxed">
-              {t.address}
-            </p>
+        {/* ORANGE MONEY */}
+        <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-6">
 
-            <a
-              href={companyData.googleMaps}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition-all shadow-lg"
-            >
-              <FaMapMarkerAlt />
-              Ouvrir Google Maps
-            </a>
+          <h3 className="text-sm font-black uppercase tracking-wider text-orange-400">
+            1️⃣ ORANGE MONEY
+          </h3>
 
-          </div>
+          <p className="mt-4 text-xs text-slate-400">
+            📱 Code USSD
+          </p>
 
-          {/* CONTACT */}
+          <p className="mt-2 break-all rounded-xl bg-slate-950 p-4 font-mono text-sm font-bold text-white">
+            #150*47*914250*MONTANT#
+          </p>
 
-          <div className="space-y-4">
-
-            <h4 className="font-bold text-sm uppercase tracking-wider text-red-500">
-              Contact Direct
-            </h4>
-
-            <p className="text-slate-300 text-xs leading-relaxed">
-              {t.phone1}
-              <br />
-              {t.phone2}
-              <br />
-              thierryindustriesaucisses15@gmail.com
-            </p>
-
-            <a
-              href="https://wa.me/237691891814"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition-all"
-            >
-              <FaWhatsapp />
-              Nous écrire sur WhatsApp
-            </a>
-
-          </div>
-
-          {/* QUICK LINKS */}
-
-          <div className="space-y-4">
-
-            <h4 className="font-bold text-sm uppercase tracking-wider text-red-500">
-              Liens Rapides
-            </h4>
-
-            <ul className="space-y-2 text-xs text-slate-300">
-
-              <li>
-                <a
-                  href="#hero"
-                  className="hover:text-red-500 transition-colors"
-                >
-                  Accueil
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#products"
-                  className="hover:text-red-500 transition-colors"
-                >
-                  Produits & Tarifs
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#restaurant"
-                  className="hover:text-red-500 transition-colors"
-                >
-                  Le Restaurant
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#stove"
-                  className="hover:text-red-500 transition-colors"
-                >
-                  Foyer Écologique
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#formations"
-                  className="hover:text-red-500 transition-colors"
-                >
-                  Formation
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#location"
-                  className="hover:text-red-500 transition-colors"
-                >
-                  Google Maps
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#contact"
-                  className="hover:text-red-500 transition-colors"
-                >
-                  Contact
-                </a>
-              </li>
-
-            </ul>
-
-          </div>
+          <p className="mt-3 text-sm font-semibold text-orange-400">
+            (TIS SARL)
+          </p>
 
         </div>
 
-        {/* COPYRIGHT */}
+        {/* MOBILE MONEY */}
+        <div className="rounded-2xl border border-blue-500/30 bg-blue-500/5 p-6">
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 border-t border-slate-900 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+          <h3 className="text-sm font-black uppercase tracking-wider text-blue-400">
+            2️⃣ MOBILE MONEY
+          </h3>
 
-          <p>
-            © {new Date().getFullYear()} Thierry Industrie Saucisses SARL.
-            Tous droits réservés.
+          <p className="mt-4 text-xs text-slate-400">
+            📱 Code USSD
           </p>
 
-          <div className="flex gap-4 flex-wrap justify-center">
+          <p className="mt-2 break-all rounded-xl bg-slate-950 p-4 font-mono text-sm font-bold text-white">
+            *126*4*299219*Montant#
+          </p>
 
+          <p className="mt-3 text-sm font-semibold text-blue-400">
+            Nom : Thierry Industrie saucisses
+          </p>
+
+        </div>
+
+        {/* BANK */}
+        <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6">
+
+          <h3 className="text-sm font-black uppercase tracking-wider text-emerald-400">
+            3️⃣ CHÈQUE OU VIREMENT BANCAIRE
+          </h3>
+
+          <p className="mt-4 text-xs text-slate-400">
+            🏦 Banque
+          </p>
+
+          <p className="mt-1 text-sm font-bold text-white">
+            UBA
+          </p>
+
+          <p className="mt-4 text-xs text-slate-400">
+            📄 RIB
+          </p>
+
+          <p className="mt-2 break-all rounded-xl bg-slate-950 p-4 font-mono text-sm font-bold text-white">
+            10033 05206 06011000543 12
+          </p>
+
+          <p className="mt-4 text-xs text-slate-400">
+            🏢 Nom du compte
+          </p>
+
+          <p className="mt-1 text-sm font-semibold leading-6 text-emerald-400">
+            Thierry Industrie Saucisses SARL
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* NOTICE */}
+      <div className="mx-6 mb-8 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 sm:mx-10">
+
+        <p className="text-xs font-black uppercase tracking-widest text-amber-400">
+          ⚠️ NB
+        </p>
+
+        <p className="mt-2 text-sm leading-6 text-slate-200">
+          Donnez juste les frais de livraison au livreur et faites nous
+          le dépôt du reste.
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-8">
+
+    {/* ==================================================
+        MAIN FOOTER
+    ================================================== */}
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+      {/* COMPANY */}
+
+      <div className="space-y-4">
+
+        <div className="flex items-center gap-3">
+
+          <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white font-black text-lg">
+            TIS
+          </div>
+
+          <span className="font-black text-base">
+            TIS SARL
+          </span>
+
+        </div>
+
+        <p className="text-slate-400 text-xs leading-relaxed">
+          {companyData.name} — {t.tagline}. Transformation
+          agroalimentaire, restaurant, porciculture et foyers écologiques.
+        </p>
+
+      </div>
+
+
+      {/* LOCATION */}
+
+      <div className="space-y-4">
+
+        <h4 className="font-bold text-sm uppercase tracking-wider text-red-500">
+          Localisation
+        </h4>
+
+        <p className="text-slate-300 text-xs leading-relaxed">
+          {t.address}
+        </p>
+
+        <a
+          href={companyData.googleMaps}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition-all shadow-lg"
+        >
+          <FaMapMarkerAlt />
+          Ouvrir Google Maps
+        </a>
+
+      </div>
+
+
+      {/* CONTACT */}
+
+      <div className="space-y-4">
+
+        <h4 className="font-bold text-sm uppercase tracking-wider text-red-500">
+          Contact Direct
+        </h4>
+
+        <p className="text-slate-300 text-xs leading-relaxed">
+          {t.phone1}
+          <br />
+          {t.phone2}
+          <br />
+          thierryindustriesaucisses15@gmail.com
+        </p>
+
+        <a
+          href="https://wa.me/237691891814"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition-all"
+        >
+          <FaWhatsapp />
+          Nous écrire sur WhatsApp
+        </a>
+
+      </div>
+
+
+      {/* QUICK LINKS */}
+
+      <div className="space-y-4">
+
+        <h4 className="font-bold text-sm uppercase tracking-wider text-red-500">
+          Liens Rapides
+        </h4>
+
+        <ul className="space-y-2 text-xs text-slate-300">
+
+          <li>
             <a
-              href="https://www.facebook.com/share/1Ci6gUgwsN/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
+              href="#hero"
+              className="hover:text-red-500 transition-colors"
             >
-              Facebook Douala
+              Accueil
             </a>
+          </li>
 
+          <li>
             <a
-              href="https://www.linkedin.com/company/thierry-industrie-saucisses-sarl/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
+              href="#products"
+              className="hover:text-red-500 transition-colors"
             >
-              LinkedIn
+              Produits & Tarifs
             </a>
+          </li>
 
+          <li>
             <a
-              href="https://www.tiktok.com/@tis.restaurant"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
+              href="#restaurant"
+              className="hover:text-red-500 transition-colors"
             >
-              TikTok
+              Le Restaurant
             </a>
+          </li>
 
+          <li>
             <a
-              href={companyData.googleMaps}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-red-500 hover:text-red-400 transition-colors font-bold"
+              href="#stove"
+              className="hover:text-red-500 transition-colors"
+            >
+              Foyer Écologique
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#formations"
+              className="hover:text-red-500 transition-colors"
+            >
+              Formation
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#location"
+              className="hover:text-red-500 transition-colors"
             >
               Google Maps
             </a>
+          </li>
 
-          </div>
+          <li>
+            <a
+              href="#contact"
+              className="hover:text-red-500 transition-colors"
+            >
+              Contact
+            </a>
+          </li>
 
-        </div>
+        </ul>
 
-      </footer>
+      </div>
+
+    </div>
+
+
+    {/* ==================================================
+        COPYRIGHT
+    ================================================== */}
+
+    <div className="border-t border-slate-900 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+
+      <p>
+        © {new Date().getFullYear()} Thierry Industrie Saucisses SARL.
+        Tous droits réservés.
+      </p>
+
+      <div className="flex gap-4 flex-wrap justify-center">
+
+        <a
+          href="https://www.facebook.com/share/1Ci6gUgwsN/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition-colors"
+        >
+          Facebook Douala
+        </a>
+
+        <a
+          href="https://www.linkedin.com/company/thierry-industrie-saucisses-sarl/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition-colors"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@tis.restaurant"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition-colors"
+        >
+          TikTok
+        </a>
+
+        <a
+          href={companyData.googleMaps}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-red-500 hover:text-red-400 transition-colors font-bold"
+        >
+          Google Maps
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
 
       {/* ======================================================
           FLOATING WHATSAPP
@@ -3092,3 +3258,5 @@ const paymentInformation = {
     </div>
   );
 }
+
+<Footer />
