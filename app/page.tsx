@@ -5,6 +5,8 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 import NewsletterBox from '@/components/NewsletterBox';
 import { FaMobileScreenButton } from "react-icons/fa6";
 import PaymentReservation from "@/components/PaymentReservation";
+import EventsSection from "@/components/EventsSection";
+
 import Footer from "@/components/Footer";
 
 
@@ -1693,298 +1695,329 @@ const paymentInformation = {
 
       </section>
 
-      {/* ======================================================
-          RESTAURANT
-      ====================================================== */}
 
-      <section
-        id="restaurant"
-        className="py-20 bg-white"
+    <EventsSection />
+
+      {/* ======================================================
+    RESTAURANT
+====================================================== */}
+
+<section
+  id="restaurant"
+  className="py-20 bg-white"
+>
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-8">
+
+    <div
+      className="text-center max-w-2xl mx-auto mb-16"
+      data-aos="fade-up"
+    >
+
+      <span className="text-red-600 font-bold text-xs uppercase tracking-widest bg-red-100 px-3 py-1 rounded-full">
+        {t.restaurantTitle}
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-3">
+        Le Goût au Quotidien
+      </h2>
+
+      <p className="text-slate-600 text-sm mt-2">
+        {t.restaurantSubtitle}
+      </p>
+
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+
+      {/* RESTAURANT INFORMATION */}
+
+      <div
+        className="space-y-6"
+        data-aos="fade-right"
       >
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="inline-flex items-center gap-2 bg-red-50 text-red-700 font-bold text-xs px-4 py-2 rounded-xl border border-red-100">
 
-          <div
-            className="text-center max-w-2xl mx-auto mb-16"
-            data-aos="fade-up"
-          >
+          <FaMapMarkerAlt className="text-red-600" />
 
-            <span className="text-red-600 font-bold text-xs uppercase tracking-widest bg-red-100 px-3 py-1 rounded-full">
-              {t.restaurantTitle}
+          Douala — Axe lourd Bépanda, face Hôtel Déborah
+
+        </div>
+
+        <div className="text-xs text-slate-500">
+          📍 Yaoundé — Chapelle Tsinga
+        </div>
+
+        <a
+          href={companyData.googleMaps}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-lg shadow-red-600/20 transition-all hover:-translate-y-0.5"
+        >
+
+          <FaMapMarkerAlt className="text-base" />
+
+          Voir notre localisation sur Google Maps
+
+        </a>
+
+        <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
+
+          Un cadre chaleureux, des plats savoureux et un service
+          ultra-rapide.
+
+        </h3>
+
+        <p className="text-slate-600 text-sm leading-relaxed">
+
+          Que ce soit sur place ou à emporter, TIS Restaurant vous
+          propose des menus variés tous les jours de la semaine.
+          Dégustation sur place à partir de 1 000 FCFA et plats à
+          emporter dès 1 500 FCFA.
+
+        </p>
+
+        <div className="grid grid-cols-2 gap-4 pt-2">
+
+          <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+
+            <span className="block font-black text-red-600 text-lg">
+              11H - 22H
             </span>
 
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-3">
-              Le Goût au Quotidien
-            </h2>
-
-            <p className="text-slate-600 text-sm mt-2">
-              {t.restaurantSubtitle}
-            </p>
+            <span className="text-xs text-slate-500 font-medium">
+              Ouvert 7j/7
+            </span>
 
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-
-            <div
-              className="space-y-6"
-              data-aos="fade-right"
-            >
-
-              <div className="inline-flex items-center gap-2 bg-red-50 text-red-700 font-bold text-xs px-4 py-2 rounded-xl border border-red-100">
-                <FaMapMarkerAlt className="text-red-600" />
-                Douala — Axe lourd Bépanda, face Hôtel Déborah
-              </div>
-
-              <div className="text-xs text-slate-500">
-                📍 Yaoundé — Chapelle Tsinga
-              </div>
-
-              <a
-                href={companyData.googleMaps}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-lg shadow-red-600/20 transition-all hover:-translate-y-0.5"
-              >
-                <FaMapMarkerAlt className="text-base" />
-                Voir notre localisation sur Google Maps
-              </a>
-
-              <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
-                Un cadre chaleureux, des plats savoureux et un service
-                ultra-rapide.
-              </h3>
-
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Que ce soit sur place ou à emporter, TIS Restaurant vous
-                propose des menus variés tous les jours de la semaine.
-                Dégustation sur place à partir de 1 000 FCFA et plats à
-                emporter dès 1 500 FCFA.
-              </p>
-
-              <div className="grid grid-cols-2 gap-4 pt-2">
-
-                <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
-
-                  <span className="block font-black text-red-600 text-lg">
-                    11H - 22H
-                  </span>
-
-                  <span className="text-xs text-slate-500 font-medium">
-                    Ouvert 7j/7
-                  </span>
-
-                </div>
-
-                <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
-
-                  <span className="block font-black text-red-600 text-lg">
-                    +237 691 89 18 14
-                  </span>
-
-                  <span className="text-xs text-slate-500 font-medium">
-                    Commandes directes
-                  </span>
-
-                </div>
-
-              </div>
-
-            </div>
-
-            <div
-              className="relative"
-              data-aos="fade-left"
-            >
-
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
-
-                <img
-                  src="/images/interior.jpeg"
-                  alt="TIS Restaurant Ambiance"
-                  className="w-full h-full object-cover"
-                />
-
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* WEEKLY MENU */}
-
-          <div
-            className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden"
-            data-aos="fade-up"
-          >
-
-            <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="text-center max-w-xl mx-auto mb-10 relative z-10">
-
-              <span className="text-red-500 font-bold text-xs uppercase tracking-widest bg-red-500/10 px-3 py-1 rounded-full">
-                {t.dailySpecialsTitle}
-              </span>
-
-              <h3 className="text-2xl sm:text-3xl font-black mt-3">
-                {t.dailySpecialsSubtitle}
-              </h3>
-
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
-
-              <div className="lg:col-span-1">
-
-                <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border border-slate-700 group">
-
-                  <img
-                    src={
-                      selectedMenuImage ??
-                      weeklyMenuImages[
-                        new Date().getDay() %
-                          weeklyMenuImages.length
-                      ]
-                    }
-                    alt="Plat du jour TIS"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent pointer-events-none" />
-
-                  <div className="absolute bottom-5 left-5 right-5">
-
-                    <div className="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider shadow-lg">
-
-                      <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-
-                      {currentDayKey} — Aujourd'hui
-
-                    </div>
-                   
-                  </div>
-                
-                 </div>
-               
-          
-
-
-                 {/* PAYMENT & RESERVATION */}
-   
-
-      {/* FOOTER */}
-  
-
-                {/* FOOD GALLERY */}
-
-                <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
-
-                  {weeklyMenuImages.map((image, index) => (
-
-                    <button
-                      key={image}
-                      type="button"
-                      onClick={() =>
-                        setSelectedMenuImage(image)
-                      }
-                      className={`relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
-                        (
-                          selectedMenuImage ??
-                          weeklyMenuImages[
-                            new Date().getDay() %
-                              weeklyMenuImages.length
-                          ]
-                        ) === image
-                          ? 'border-red-500 scale-105 shadow-lg'
-                          : 'border-slate-700 opacity-80 hover:opacity-100 hover:border-red-400'
-                      }`}
-                    >
-
-                      <img
-                        src={image}
-                        alt={`Plat TIS ${index + 1}`}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-
-                    </button>
-
-                  ))}
-
-                </div>
-
-              </div>
-
-              <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-                {(Object.keys(weeklyMenu) as DayKey[]).map(
-                  (day) => {
-
-                    const isToday =
-                      day === currentDayKey;
-
-                    return (
-                      <div
-                        key={day}
-                        className={`p-5 rounded-2xl border transition-all ${
-                          isToday
-                            ? 'bg-red-600/20 border-red-500 text-white shadow-lg'
-                            : 'bg-slate-800/60 border-slate-700 text-slate-300'
-                        }`}
-                      >
-
-                        <div className="flex justify-between items-center mb-2">
-
-                          <span className="font-bold uppercase text-xs tracking-widest text-red-400">
-
-                            {day}
-
-                            {isToday && (
-                              <span className="bg-red-600 text-white text-[10px] px-2 py-0.5 rounded-full ml-2">
-                                Aujourd'hui
-                              </span>
-                            )}
-
-                          </span>
-
-                        </div>
-
-                        <ul className="space-y-1 text-xs sm:text-sm font-semibold">
-
-                          {weeklyMenu[day].map(
-                            (item, idx) => (
-
-                              <li
-                                key={idx}
-                                className="flex items-center gap-2"
-                              >
-
-                                <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-
-                                {item}
-
-                              </li>
-
-                            )
-                          )}
-
-                        </ul>
-
-                      </div>
-                    );
-                  }
-                )}
-
-              </div>
-
-            </div>
+          <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+
+            <span className="block font-black text-red-600 text-lg">
+              +237 691 89 18 14
+            </span>
+
+            <span className="text-xs text-slate-500 font-medium">
+              Commandes directes
+            </span>
 
           </div>
 
         </div>
 
-      </section>
+      </div>
 
-      {/* ======================================================
+
+      {/* RESTAURANT IMAGE */}
+
+      <div
+        className="relative"
+        data-aos="fade-left"
+      >
+
+        <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+
+          <img
+            src="/images/interior.jpeg"
+            alt="TIS Restaurant Ambiance"
+            className="w-full h-full object-cover"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+{/* ======================================================
+    ECO STOVE
+====================================================== */}
+
+<section
+  id="stove"
+  className="py-20 bg-slate-900 text-white relative overflow-hidden"
+>
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <div
+        className="space-y-6"
+        data-aos="fade-right"
+      >
+
+        <span className="inline-flex items-center gap-1.5 bg-emerald-500/10 text-emerald-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full border border-emerald-500/25">
+          <FaSolarPanel />
+          Innovation Durable
+        </span>
+
+        <h2 className="text-3xl sm:text-4xl font-black tracking-tight">
+          {stoveDetails.title}
+        </h2>
+
+        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          {stoveDetails.description}
+        </p>
+
+        <div className="bg-slate-800/80 p-4 rounded-2xl border border-slate-700 text-xs font-bold text-red-400">
+          {stoveDetails.specs}
+        </div>
+
+        <div className="space-y-4 pt-2">
+
+          {stoveDetails.models.map(
+            (mod, idx) => (
+
+              <div
+                key={idx}
+                className="bg-slate-800 p-4 rounded-2xl border border-slate-700 flex justify-between items-center"
+              >
+
+                <div>
+
+                  <h4 className="font-bold text-sm text-white">
+                    {mod.name}
+                  </h4>
+
+                  <p className="text-slate-400 text-xs mt-0.5">
+                    {mod.desc}
+                  </p>
+
+                </div>
+
+                <span className="bg-red-600 text-white font-black text-xs px-3 py-1.5 rounded-xl whitespace-nowrap ml-4">
+                  {mod.price}
+                </span>
+
+              </div>
+
+            )
+          )}
+
+        </div>
+
+        <div className="pt-4">
+
+          <a
+            href="https://wa.me/237691891814?text=Bonjour,%20je%20souhaite%20commander%20un%20Foyer%20Écologique%20TIS."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-4 rounded-xl inline-flex items-center gap-2 shadow-lg transition-all"
+          >
+
+            <FaWhatsapp className="text-lg" />
+
+            {stoveDetails.cta}
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      {/* ==================================================
+          ECO STOVE IMAGE SLIDER
+      ================================================== */}
+
+      <div
+        className="relative flex justify-center"
+        data-aos="fade-left"
+      >
+
+        <div className="relative w-full max-w-md">
+
+          <Slider
+            dots={true}
+            infinite={true}
+            speed={700}
+            slidesToShow={1}
+            slidesToScroll={1}
+            autoplay={true}
+            autoplaySpeed={4500}
+            pauseOnHover={true}
+            pauseOnFocus={true}
+            arrows={true}
+            swipeToSlide={true}
+            touchMove={true}
+            adaptiveHeight={false}
+            responsive={[
+              {
+                breakpoint: 768,
+                settings: {
+                  arrows: false,
+                  dots: true,
+                },
+              },
+            ]}
+          >
+
+            {stoveDetails.images.map((image) => (
+
+              <div
+                key={image.src}
+                className="px-1 pb-8"
+              >
+
+                <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-800">
+
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-6 pt-16">
+
+                    <div className="flex items-end justify-between gap-3">
+
+                      <div>
+
+                        <span className="inline-block bg-red-600 text-white text-[10px] sm:text-xs font-black uppercase px-3 py-1 rounded-full mb-2">
+                          Foyer Écologique
+                        </span>
+
+                        <h3 className="text-white font-black text-lg sm:text-xl">
+                          {image.name}
+                        </h3>
+
+                      </div>
+
+                      <span className="bg-white text-red-600 font-black text-sm sm:text-base px-3 py-2 rounded-xl shadow-lg whitespace-nowrap">
+                        {image.price}
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            ))}
+
+          </Slider>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+               
+
+              {/* ======================================================
           ECO STOVE
       ====================================================== */}
 
@@ -2863,8 +2896,6 @@ const paymentInformation = {
 
       <SocialHub />
 
-      <PaymentReservation />
-
 {/* ======================================================
     FOOTER
 ====================================================== */}
@@ -3234,7 +3265,6 @@ const paymentInformation = {
   </div>
 
 </footer>
-
       {/* ======================================================
           FLOATING WHATSAPP
       ====================================================== */}
@@ -3255,8 +3285,8 @@ const paymentInformation = {
         </button>
       )}
 
+      <Footer />
+
     </div>
   );
 }
-
-<Footer />
